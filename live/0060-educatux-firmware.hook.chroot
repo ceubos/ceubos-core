@@ -1,0 +1,321 @@
+#!/bin/sh
+set -e
+echo "HOOK: educatux adjusts"
+dpkg --add-architecture i386
+apt-get update
+
+# intel
+cat > /usr/share/X11/xorg.conf.d/intel.conf <<'EOF'
+Section "Device"
+    Identifier "intelgpu0"
+    Driver "intel"
+    Option "VirtualHeads" "2"
+EndSection
+
+EOF
+
+sudo depmod -a
+
+# kernel
+sudo apt install -t buster-backports --yes --force-yes -y linux-image-5.6.0-0.bpo.2-amd64 linux-headers-5.6.0-0.bpo.2-amd64 linux-headers-amd64
+
+# broadcom-sta-dkms & firmwares
+sudo apt install -t buster-backports --yes --force-yes -y  broadcom-sta-common broadcom-sta-dkms broadcom-sta-source alsa-firmware-loaders amd64-microcode atmel-firmware b43-fwcutter bluez-firmware dahdi-firmware-nonfree dfu-programmer dns323-firmware-tools expeyes-firmware-dev firmware-adi firmware-amd-graphics firmware-ath9k-htc firmware-ath9k-htc-dbgsym firmware-atheros firmware-b43-installer firmware-b43legacy-installer firmware-bnx2   firmware-bnx2x firmware-brcm80211 firmware-cavium firmware-intel-sound firmware-intelwimax firmware-ipw2x00 firmware-ivtv firmware-iwlwifi firmware-libertas firmware-linux firmware-linux-free firmware-linux-nonfree firmware-microbit-micropython-dl firmware-misc-nonfree firmware-myricom firmware-netronome firmware-netxen  firmware-qcom-media firmware-qlogic firmware-ralink  firmware-realtek firmware-samsung firmware-siano firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw ubertooth-firmware
+
+# nvidia e cuda
+sudo apt install -t buster-backports --yes --force-yes -y nvidia-driver nvidia-settings nvidia-smi libnvidia-encode1 libnvidia-encode1:i386 python3-dev arduino arduino-mk dfu-programmer nvidia-vulkan-common nvidia-vulkan-icd:i386 nvidia-vdpau-driver:amd64  nvidia-vdpau-driver:i386 nvidia-vulkan-icd vulkan-utils nvidia-driver-libs-i386:i386
+sudo apt install -t buster-backports --yes --force-yes -y libcuda1 libcudart10.1 libcudnn7 libcudnn7-dev nvidia-cuda-dev nvidia-cuda-toolkit nvidia-settings nvidia-smi nvidia-cuda-toolkit libnvidia-encode1 libnvblas10 libnvcuvid1:i386 libnvgraph10 libnvidia-glvkspirv:i386 libnvidia-glvkspirv:amd64 libnvidia-ml1:i386 libnvtoolsext1 libnvvm3
+sudo apt install -t buster-backports --yes --force-yes -y libgl1-nvidia-glvnd-glx:i386 nvidia-driver-libs:i386
+sudo apt install -t buster-backports --yes --force-yes -y primus
+sudo apt install -t buster-backports --yes --force-yes -y v4l2loopback-utils
+
+# beamer.sh
+sudo apt install --yes --force-yes -y  virtualgl
+cat > /usr/local/bin/beamer.sh <<'EOF'
+#!/bin/sh
+
+output1=eDP1
+output2=VIRTUAL1
+
+wxh=$1
+
+if [ -z "$wxh" ]; then
+  wxh=1920x1080
+fi
+
+# Test whether intel-virtual-output is running and start it.
+ivo_process=`ps axu |grep 'intel-virtual-output' |egrep -v 'grep'`
+if [ -z "$ivo_process" ]; then
+   intel-virtual-output
+   sleep 3
+fi
+
+output1_mode=$wxh
+
+echo Using mode for $output1: $output1_mode
+
+output2_mode=`xrandr |grep $output2\\\. |grep $wxh |awk '{print $1}'`
+output2_mode=`echo $output2_mode |awk '{print $1}'` 
+
+echo Using mode for $output2: $output2_mode
+
+xrandr --output $output1 --mode $output1_mode --output $output2 --mode $output2_mode --same-as $output1
+
+EOF
+
+sudo chmod +x /usr/local/bin/beamer.sh
+
+# bumblebee 0
+cat > /etc/bumblebee/xorg.conf.nvidia <<'EOF'
+Section "ServerLayout"
+    Identifier  "Layout0"
+    Option      "AutoAddDevices" "true"
+    Option      "AutoAddGPU" "false"
+EndSection
+
+Section "Device"
+    Identifier  "DiscreteNvidia"
+    Driver      "nvidia"
+    VendorName  "NVIDIA Corporation"
+
+
+#   If the X server does not automatically detect your VGA device,
+#   you can manually set it here.
+#   To get the BusID prop, run `lspci | egrep 'VGA|3D'` and input the data
+#   as you see in the commented example.
+#   This Setting may be needed in some platforms with more than one
+#   nvidia card, which may confuse the proprietary driver (e.g.,
+#   trying to take ownership of the wrong device). Also needed on Ubuntu 13.04.
+#   BusID "PCI:1:0:0"
+
+#   Setting ProbeAllGpus to false prevents the new proprietary driver
+#   instance spawned to try to control the integrated graphics card,
+#   which is already being managed outside bumblebee.
+#   This option doesn't hurt and it is required on platforms running
+#   more than one nvidia graphics card with the proprietary driver.
+#   (E.g. Macbook Pro pre-2010 with nVidia 9400M + 9600M GT).
+#   If this option is not set, the new Xorg may blacken the screen and
+#   render it unusable (unless you have some way to run killall Xorg).
+    Option "ProbeAllGpus" "false"
+    Option "NoLogo" "true"
+#    Option "UseEDID" "false"
+#    Option "UseDisplayDevice" "none"
+    Option "AllowEmptyInitialConfiguration"
+EndSection
+
+Section "Screen"
+    Identifier "Screen0"
+    Device "DiscreteNvidia"
+EndSection
+
+EOF
+
+# bumblebee 1
+cat > /etc/bumblebee/bumblebee.conf <<'EOF'
+# Configuration file for Bumblebee. Values should **not** be put between quotes
+
+## Server options. Any change made in this section will need a server restart
+# to take effect.
+[bumblebeed]
+# The secondary Xorg server DISPLAY number
+VirtualDisplay=:8
+# Should the unused Xorg server be kept running? Set this to true if waiting
+# for X to be ready is too long and don't need power management at all.
+KeepUnusedXServer=false
+# The name of the Bumbleblee server group name (GID name)
+ServerGroup=bumblebee
+# Card power state at exit. Set to false if the card shoud be ON when Bumblebee
+# server exits.
+TurnCardOffAtExit=false
+# The default behavior of '-f' option on optirun. If set to "true", '-f' will
+# be ignored.
+NoEcoModeOverride=false
+# The Driver used by Bumblebee server. If this value is not set (or empty),
+# auto-detection is performed. The available drivers are nvidia and nouveau
+# (See also the driver-specific sections below)
+Driver=
+# Directory with a dummy config file to pass as a -configdir to secondary X
+XorgConfDir=/etc/bumblebee/xorg.conf.d
+# Xorg binary to run
+XorgBinary=/usr/lib/xorg/Xorg
+
+## Client options. Will take effect on the next optirun executed.
+[optirun]
+# Acceleration/ rendering bridge, possible values are auto, virtualgl and
+# primus.
+Bridge=auto
+# The method used for VirtualGL to transport frames between X servers.
+# Possible values are proxy, jpeg, rgb, xv and yuv.
+VGLTransport=proxy
+# List of paths which are searched for the primus libGL.so.1 when using
+# the primus bridge
+PrimusLibraryPath=/usr/lib/x86_64-linux-gnu/primus:/usr/lib/i386-linux-gnu/primus
+# Should the program run under optirun even if Bumblebee server or nvidia card
+# is not available?
+AllowFallbackToIGC=false
+
+
+# Driver-specific settings are grouped under [driver-NAME]. The sections are
+# parsed if the Driver setting in [bumblebeed] is set to NAME (or if auto-
+# detection resolves to NAME).
+# PMMethod: method to use for saving power by disabling the nvidia card, valid
+# values are: auto - automatically detect which PM method to use
+#         bbswitch - new in BB 3, recommended if available
+#       switcheroo - vga_switcheroo method, use at your own risk
+#             none - disable PM completely
+# https://github.com/Bumblebee-Project/Bumblebee/wiki/Comparison-of-PM-methods
+
+## Section with nvidia driver specific options, only parsed if Driver=nvidia
+[driver-nvidia]
+# Module name to load, defaults to Driver if empty or unset
+KernelDriver=nvidia
+PMMethod=auto
+# colon-separated path to the nvidia libraries
+LibraryPath=/usr/lib/x86_64-linux-gnu/nvidia:/usr/lib/i386-linux-gnu/nvidia:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu
+# comma-separated path of the directory containing nvidia_drv.so and the
+# default Xorg modules path
+XorgModulePath=/usr/lib/nvidia,/usr/lib/xorg/modules
+XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
+# If set to true, will always unload the kernel module(s) even with
+# PMMethod=none - useful for newer Optimus models on which the kernel power
+# management works out of the box to power the card on/off without bbswitch.
+AlwaysUnloadKernelDriver=false
+
+## Section with nouveau driver specific options, only parsed if Driver=nouveau
+[driver-nouveau]
+KernelDriver=nouveau
+PMMethod=auto
+XorgConfFile=/etc/bumblebee/xorg.conf.nouveau
+
+EOF
+
+# darknet
+sudo apt install --yes --force-yes -y libopencv-shape3.2 libopencv-shape-dev libopencv-stitching3.2 libopencv-stitching-dev libopencv-superres-dev libopencv-superres3.2 libopencv-ts-dev libopencv-video-dev libopencv-videostab-dev libopencv-videostab3.2 libopencv-apps-dev libopencv-apps1d libopencv-shape3.2 libopencv-shape-dev
+
+# ffmpeg
+sudo rm -rf ~/ffmpeg_sources/
+sudo ldconfig -vvvv
+sudo apt install  -t buster-backports --yes --force-yes -y libbluray-dev libbs2b-dev libcaca-dev libgme-dev ladspa-sdk libchromaprint-dev libchromaprint-tools frei0r-plugins frei0r-plugins-dev libmodplug-dev libgsm1-dev libopencore-amrnb-dev libopencore-amrwb-dev libopencv-dev librubberband-dev libopenjp2-7-dev libshine-dev libsoxr-dev libsnappy-dev libtheora-dev libtwolame-dev libvidstab-dev libvo-amrwbenc-dev libwavpack-dev libwebp-dev  libzimg-dev libxvidcore-dev libzmq5-dev libopenal-dev libzvbi-dev libomxil-bellagio-dev libcdio-dev libcdio-cdda-dev libcdio-paranoia-dev libcodec2-dev libilbc-dev libkvazaar-dev libopenmpt-dev libopenh264-dev libmfx-dev libtesseract-dev tesseract-ocr libvmaf-dev libxvmc-dev libaom-dev libavc1394-dev liblzo2-dev libxvmc-dev autoconf automake build-essential cmake git-core libass-dev libfreetype6-dev libgnutls28-dev libsdl2-dev libtool libva-dev libvdpau-dev   libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev pkg-config texinfo wget yasm zlib1g-dev libass-dev libtool libssl-dev gnutls-bin libx265-dev libnuma-dev mercurial libnuma-dev libx264-dev nasm libvpx-dev libfdk-aac-dev libmp3lame-dev libfdk-aac-dev libopus-dev texinfo zlib1g-dev cmake mercurial libbz2-dev rtmpdump librtmp-dev libunistring2 libunistring-dev opencl-headers nvidia-kernel-source libiec61883-dev checkinstall libnvidia-encode1:amd64 libnvidia-encode1:i386 nv-codec-headers libssh-gcrypt-dev libspeex-dev ocl-icd-*
+mkdir ~/ffmpeg_sources && cd ~/ffmpeg_sources && wget -O ffmpeg-snapshot.tar.bz2 https://ffmpeg.org/releases/ffmpeg-4.1.5.tar.bz2 && tar xjvf ffmpeg-snapshot.tar.bz2 && cd ffmpeg-4.1.5 && ./configure --disable-decoder=amrnb --disable-decoder=libopenjpeg --disable-libopencv --disable-outdev=sdl2 --disable-podpages --disable-sndio --disable-stripping --enable-libaom --enable-avfilter --enable-avresample --enable-gcrypt --disable-gnutls --enable-openssl --enable-gpl --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libfdk-aac --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libilbc --enable-libkvazaar --enable-libmp3lame --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenh264 --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvo-amrwbenc --enable-libvorbis --enable-libvpx --enable-libx265 --enable-libzimg --enable-libxvid --enable-libzvbi --enable-nonfree --enable-opencl --enable-opengl --enable-postproc --enable-pthreads --enable-shared --enable-version3 --enable-libwebp --incdir=/usr/include/x86_64-linux-gnu --libdir=/usr/lib/x86_64-linux-gnu --prefix=/usr --toolchain=hardened --enable-frei0r --enable-chromaprint --enable-libx264 --enable-libiec61883 --enable-libdc1394 --enable-vaapi --enable-libmfx --enable-libvmaf --enable-cuda --enable-cuvid --enable-nvenc --enable-libx264 --enable-libx265  --enable-libvpx --disable-altivec --shlibdir=/usr/lib/x86_64-linux-gnu && make && sudo checkinstall --pkgname=FFmpeg --deldoc=yes --deldoc=yes --nodoc --fstrans=no --backup=no --install=no --maintainer=aderbal@educatux.com.br --pkgversion="5:$(date +%Y%m%d)-git" -y
+
+cat > /usr/local/bin/virtual-cam.sh <<'EOF'
+primusrun ffmpeg -probesize 32 -analyzeduration 0 -listen 1 -i rtmp://127.0.0.1:1935/live/cam0 -s 1920x1080 -map 0:1 -c:v h264_nvenc -f v4l2 -vcodec rawvideo -pix_fmt yuv420p -video_size 1920x1080 /dev/video10 -map 0:0 -f alsa hw:10,1
+
+EOF
+
+sudo chmod +x /usr/local/bin/virtual-cam.sh
+
+# OBS
+cd ~/
+apt-get download libavdevice-dev libluajit-5.1-common x11proto-composite-dev libavfilter-dev libluajit-5.1-2 libluajit-5.1-dev libvulkan-dev libxcomposite-dev libpostproc-dev libvulkan1 qtbase5-dev qtbase5-dev-tools qt5-qmake libvulkan-dev libqt5test5 qt5-qmake-bin
+dpkg -i --ignore-depends=libvulkan1 libvulkan-dev_1.2.141.0-1~bpo10+1_amd64.deb
+dpkg -i --ignore-depends= libvulkan1_1.2.141.0-1~bpo10+1_amd64.deb
+dpkg -i --ignore-depends= libqt5test5_5.11.3+dfsg1-1+deb10u3_amd64.deb
+dpkg -i --ignore-depends= qt5-qmake-bin_5.11.3+dfsg1-1+deb10u3_amd64.deb
+dpkg -i --ignore-depends= qt5-qmake_5.11.3+dfsg1-1+deb10u3_amd64.deb
+dpkg -i --ignore-depends= qtbase5-dev-tools_5.11.3+dfsg1-1+deb10u3_amd64.deb
+dpkg -i --ignore-depends= qtbase5-dev_5.11.3+dfsg1-1+deb10u3_amd64.deb
+dpkg -i --ignore-depends=libpostproc-dev libavfilter-dev_10%3a4.1.6-dmo1+deb10u1_amd64.deb
+dpkg -i --ignore-depends=libpostproc-dev libavdevice-dev_10%3a4.1.6-dmo1+deb10u1_amd64.deb
+dpkg -i --ignore-depends=libluajit-5.1-2 libluajit-5.1-dev_2.1.0~beta3+dfsg-5.1_amd64.deb
+dpkg -i --ignore-depends=x11proto-composite-dev libxcomposite-dev_1%3a0.4.4-2_amd64.deb
+dpkg -i --ignore-depends= libpostproc-dev_10%3a4.1.6-dmo1+deb10u1_amd64.deb
+dpkg -i --ignore-depends=libluajit-5.1-common libluajit-5.1-2_2.1.0~beta3+dfsg-5.1_amd64.deb
+dpkg -i --ignore-depends= x11proto-composite-dev_1%3a2018.4-4_all.deb
+dpkg -i --ignore-depends= libluajit-5.1-common_2.1.0~beta3+dfsg-5.1_all.deb
+sudo apt-get install --yes --force-yes -y  \
+           build-essential \
+           checkinstall \
+           cmake \
+           git \
+           libmbedtls-dev \
+           libasound2-dev \
+           libavcodec-dev \
+           libavdevice-dev \
+           libavfilter-dev \
+           libavformat-dev \
+           libavutil-dev \
+           libcurl4-openssl-dev \
+           libfdk-aac-dev \
+           libfontconfig-dev \
+           libfreetype6-dev \
+           libgl1-mesa-dev \
+           libjack-jackd2-dev \
+           libjansson-dev \
+           libluajit-5.1-dev \
+           libpulse-dev \
+           libqt5x11extras5-dev \
+           libspeexdsp-dev \
+           libswresample-dev \
+           libswscale-dev \
+           libudev-dev \
+           libv4l-dev \
+           libvlc-dev \
+           libx11-dev \
+           libx264-dev \
+           libx265-dev \
+           libxcb-shm0-dev \
+           libxcb-xinerama0-dev \
+           libxcomposite-dev \
+           libxinerama-dev \
+           pkg-config \
+           python3-dev \
+           qtbase5-dev \
+           libqt5svg5-dev \
+           swig \
+           libxcb-randr0-dev \
+           libxcb-xfixes0-dev \
+           libx11-xcb-dev \
+           libxcb1-dev
+
+cd ~/obs-studio/build
+sudo dpkg -i obs-studio_25.0.8-git-1_amd64.deb
+sudo ldconfig -vvvv
+
+cd ~/obs-v4l2sink/build
+sudo apt-get install --yes --force-yes -y  qtbase5-dev
+sudo dpkg -i obs-v4l2sink_25.0.8-git-1_amd64.deb
+sudo ldconfig -vvvv
+
+# SecondLife
+sudo apt -t buster-backports install --yes --force-yes -y libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa:i386 gstreamer1.0-pulseaudio:i386
+
+# EducatuX
+sudo apt install --yes --force-yes -y calamares-settings-educatux-hybrid calamares
+
+# modules
+cat > /etc/modules <<'EOF'
+nvidia
+v4l2loopback
+snd-aloop
+
+EOF
+
+# v4l2loopback
+cd ~/
+rm -rf v4l2loopback
+git clone https://github.com/umlaeute/v4l2loopback.git
+cd v4l2loopback/
+make
+sudo checkinstall --pkgname=v4l2loopback --deldoc=yes --deldoc=yes --nodoc --fstrans=no --backup=no --install=no --maintainer=aderbal@educatux.com.br --pkgversion="1:$(date +%Y%m%d)-git" -y
+depmod -a
+
+cat > /etc/modprobe.d/v4l2loopback.conf <<'EOF'
+options v4l2loopback devices=1 video_nr=10 card_label="OBS Cam" exclusive_caps=1
+options snd-aloop index=10 id="OBS Mic"
+
+EOF
+
+sudo depmod -a
+
+# Limpando tudo
+sudo rm -rf ~/obs-studio
+sudo rm -rf ~/cef_binary_3770_linux64.tar.bz2
+sudo rm -rf ~/ffmpeg_sources
+sudo rm -rf ~/obs-v4l2sink
+sudo rm -rf ~/cef_binary_3770_linux64/
+sudo rm -rf /etc/modprobe.d/nouveau.conf
+sudo rm -rf ~/v4l2loopback
+sudo rm -r ~/*.deb
+
+exit 0
