@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+#Test jenkins
+
 LINUX_IMAGE="linux-image-5.7.0-0.bpo.2"
 LINUX_HEADERS="linux-headers-5.7.0-0.bpo.2"
 
