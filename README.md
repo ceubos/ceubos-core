@@ -1,5 +1,6 @@
-# ceubos-core
-CeubOS Core Team 
+# CEUB OS
+**“Nos ensinem a ter liberdade novamente”** \
+\- CeubOS Core
 
 
 # Atualizar seus repositorios para o backports
