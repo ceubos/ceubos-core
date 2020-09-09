@@ -1,4 +1,9 @@
 #!/bin/sh
+###########################################
+#                                         #
+# “Nos ensinem a ter liberdade novamente” #
+#                                         #
+###########################################
 set -e
 echo "HOOK: educatux adjusts"
 dpkg --add-architecture i386
