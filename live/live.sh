@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################################################################################################
 #
-echo "                                 “Nos ensinem a ter liberdade novamente”  "
+echo "                                 “Nos ensinem a ter liberdade novamente”"
 #
 echo "      ##########      #######       ##      ##     #########               ############      ############"
 echo "     ##              ##            ##      ##     ##       ##             ##        ##     ##"
@@ -46,7 +46,7 @@ lb config noauto \
      --mirror-bootstrap http://httpredir.debian.org/debian/ \
      --mirror-binary http://httpredir.debian.org/debian/ \
      --mirror-binary-security http://security.debian.org/ \
-     --bootappend-live "boot=live components timezone=America/Sao_Paulo locales=pt_BR.UTF-8 keyboard-layouts=br keyboard-variants=abnt2 hostname=EducatuX username=educatux noprompt noeject autologin splash blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
+     --bootappend-live "boot=live components timezone=America/Sao_Paulo locales=pt_BR.UTF-8 keyboard-layouts=br keyboard-variants=abnt2 hostname=CEUB-OS username=ceubos noprompt noeject autologin splash blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
      --bootappend-live-failsafe "initrd=/live/initrd boot=live persistence config memtest noapic noapm nodma nomce nolapic nomodeset nosmp splash vga=791 pti=off blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
      --firmware-chroot true \
      --firmware-binary true \
@@ -59,9 +59,9 @@ lb config noauto \
      --debconf-priority critical \
      --iso-preparer "CEUB" \
      --iso-publisher "CEUB - https://www.ceubos.com.br" \
-     --keyring-packages "blueproximity wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
+     --keyring-packages "wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
      glx-alternative-mesa=1.2.0~bpo10+1 update-glx=1.2.0~bpo10+1 glx-diversions=1.2.0~bpo10+1 \
-     python3-dev arduino arduino-mk dfu-programmer calamares-settings-educatux-hybrid \
+     python3-dev arduino arduino-mk dfu-programmer \
      calamares shotcut btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
      iramuteq mesa-utils-extra flashplayer-mozilla firefox-esr firefox-esr-l10n-all \
      fonts-arabeyes fonts-arphic-ukai fonts-arphic-uming fonts-beng fonts-beng-extra \
@@ -92,7 +92,7 @@ lb config noauto \
      apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
      doxygen vim openscenegraph libopenthreads20 libopenthreads20 openscenegraph \
      openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
-     libkpmcore-dev libkpmcore7 educatux-games64 fakeroot mpg123 unrar \
+     libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
      xserver-xorg-input-mouse xserver-xorg-video-qxl nodejs fonts-dejavu \
