@@ -59,10 +59,11 @@ lb config noauto \
      --debconf-priority critical \
      --iso-preparer "CEUB" \
      --iso-publisher "CEUB - https://www.ceubos.com.br" \
+     #avahi-daemon
      --keyring-packages "blueproximity wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
      glx-alternative-mesa=1.2.0~bpo10+1 update-glx=1.2.0~bpo10+1 glx-diversions=1.2.0~bpo10+1 \
      python3-dev arduino arduino-mk dfu-programmer calamares-settings-educatux-hybrid \
-     calamares shotcut btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
+     calamares btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
      iramuteq mesa-utils-extra flashplayer-mozilla firefox-esr firefox-esr-l10n-all \
      fonts-arabeyes fonts-arphic-ukai fonts-arphic-uming fonts-beng fonts-beng-extra \
      fonts-bpg-georgian fonts-cantarell fonts-dejavu fonts-dejavu-core fonts-dejavu-extra \
@@ -91,8 +92,8 @@ lb config noauto \
      live-task-cinnamon task-cinnamon-desktop dosfstools nautilus-dropbox \
      apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
      doxygen vim openscenegraph libopenthreads20 libopenthreads20 openscenegraph \
-     openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
-     libkpmcore-dev libkpmcore7 educatux-games64 fakeroot mpg123 unrar \
+     openscenegraph-doc openscenegraph-examples onboard mate-themes \
+     libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
      xserver-xorg-input-mouse xserver-xorg-video-qxl nodejs fonts-dejavu \
@@ -101,25 +102,25 @@ lb config noauto \
      libvirt-sanlock libvirt-clients libvirt-daemon-system munin-libvirt-plugins \
      nbdkit-plugin-libvirt qemu-kvm ebtables dnsmasq puredata-utils puredata-gui \
      puredata-import puredata-extra pd-aubio pd-cyclone pd-deken accountsservice acl \
-     alsa-firmware-loaders alsa-oss alsa-utils anacron apg aspell aspell-pt-br \
-     at-spi2-core audacity audacity-data autoconf automake autopoint  avahi-daemon \
+     alsa-firmware-loaders alsa-oss alsa-utils anacron aspell aspell-pt-br \
+     at-spi2-core audacity audacity-data autoconf automake autopoint  \
      brasero brasero-cdrkit brasero-common cdrdao dvdauthor growisofs wodim vcdimager \
-     b43-fwcutter bc bdf2psf bind9-host binutils blinken blt blueman bluetooth bluez \
+     b43-fwcutter bc bind9-host binutils blt blueman bluetooth bluez \
      bluez-cups bluez-firmware bluez-obexd bluez-tools bnd brasero-cdrkit brasero-common \
-     busybox bzip2 ca-certificates ca-certificates-java caribou cdrdao cheese cheese-common \
-     jupyter-notebook cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
+     bzip2 ca-certificates ca-certificates-java caribou cheese cheese-common \
+     cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
      coinor-libcoinutils3v5 coinor-libosi1v5 colord colord-data \
      composer console-setup console-setup-linux cpp cracklib-runtime \
      crda culmus cups cups-browsed cups-bsd cups-client cups-common \
      cups-core-drivers cups-daemon cups-filters cups-filters-core-drivers \
      cups-pk-helper cups-ppdc cups-server-common curl dbconfig-common dbus dbus-user-session dbus-x11 dconf-gsettings-backend dconf-service debhelper debootstrap \
      default-jdk default-jdk-headless default-jre default-jre-headless \
-     default-mysql-client desktop-base desktop-file-utils \
+     desktop-base desktop-file-utils \
      dh-autoreconf dh-strip-nondeterminism dictionaries-common \
-     djvulibre-bin dkms dnsutils docbook-xml docbook-xsl dreamchess \
-     dreamchess-data dvdauthor efibootmgr eog espeak-ng-data exfat-fuse \
-     exfat-utils extlinux ffmpeg file file-roller finger  five-or-more \
-     fontconfig fontconfig-config four-in-a-row freeglut3 fritzing \
+     djvulibre-bin dkms dnsutils docbook-xml docbook-xsl \
+     efibootmgr eog espeak-ng-data exfat-fuse \
+     exfat-utils ffmpeg file file-roller finger \
+     fontconfig fontconfig-config freeglut3 fritzing \
      fritzing-data fritzing-parts fuse fxload g++ gawk gconf-service \
      gconf2 gconf2-common gcr \
      gdebi gdebi-core \
@@ -129,11 +130,11 @@ lb config noauto \
      git git-gui git-man gkbd-capplet \
      gnome-accessibility-themes gnome-backgrounds gnome-bluetooth gnome-calculator \
      gnome-control-center gnome-control-center-data gnome-desktop3-data \
-     gnome-font-viewer gnome-keyring gnome-klotski gnome-mahjongg gnome-mime-data \
-     gnome-mines gnome-nettool gnome-nibbles gnome-online-accounts gnome-orca \
-     gnome-robots gnome-screenshot gnome-settings-daemon gnome-sudoku \
-     gnome-sushi gnome-system-monitor gnome-taquin gnome-terminal \
-     gnome-terminal-data gnome-tetravex gnome-themes-standard \
+     gnome-font-viewer gnome-keyring gnome-klotski gnome-mime-data \
+     gnome-nettool gnome-online-accounts gnome-orca \
+     gnome-screenshot gnome-settings-daemon \
+     gnome-sushi gnome-system-monitor gnome-terminal \
+     gnome-terminal-data gnome-themes-standard \
      adwaita-icon-theme gnome-user-guide gnome-user-share gnome-video-effects \
      nautilus-gtkhash nautilus-emblems nautilus-scripts-manager nautilus-share nautilus-image-converter \
      gir1.2-accountsservice-1.0 gir1.2-appindicator3-0.1 gir1.2-atk-1.0 gir1.2-atspi-2.0 \
@@ -150,20 +151,20 @@ lb config noauto \
      gir1.2-upowerglib-1.0 gir1.2-vte-2.91 gir1.2-webkit2-4.0 \
      gir1.2-wnck-3.0 gir1.2-xapp-1.0 gir1.2-xkl-1.0 gir1.2-zeitgeist-2.0 \
      gnote gnucap gnupg2 gocr goldendict gparted gphoto2 greybird-gtk-theme grilo-plugins-0.3 \
-     groff-base growisofs \
+     groff-base \
      gscan2pdf gsettings-desktop-schemas gsfonts gsfonts-x11 gstreamer1.0-alsa gstreamer1.0-clutter-3.0 gstreamer1.0-espeak gstreamer1.0-libav gstreamer1.0-nice gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-pulseaudio gstreamer1.0-x \
      gthumb gthumb-data \
      gtk-update-icon-cache gtk2-engines \
      gvfs gvfs-backends gvfs-bin gvfs-common gvfs-daemons gvfs-fuse gvfs-libs \
      grub-common grub-efi-amd64 grub-efi-amd64-bin grub-pc-bin grub2-common \
-     hddtemp hfsplus hfsutils hicolor-icon-theme hitori hspell hspell-gui \
-     i965-va-driver iagno imagemagick imagemagick-6-common imagemagick-6.q16 \
+     hddtemp hfsplus hfsutils hicolor-icon-theme hspell hspell-gui \
+     i965-va-driver imagemagick imagemagick-6-common imagemagick-6.q16 \
      initramfs-tools initramfs-tools-core intltool-debian \
      inxi iptraf iptraf-ng iputils-tracepath iso-codes iso-flags-png-320x240 \
      isolinux itop iw jackd jackd2 jsonlint \
      kde-l10n-ptbr libkf5khtml-bin kde-runtime kde-runtime-data kdelibs-bin kdelibs5-data kdelibs5-plugins kdoctools kexec-tools kio klibc-utils \
      konwert konwert-filters kpackagetool5 krb5-locales \
-     lightsoff live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
+     live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
      locales lp-solve lsb-release lsof madfuload media-player-info melt \
      menu-l10n mesa-utils mesa-va-drivers mesa-vdpau-drivers \
      metacity metacity-common \
@@ -181,24 +182,21 @@ lb config noauto \
      patch patchutils \
      pciutils \
      perl perl-openssl-defaults perl-tk \
-     phalanx \
      phonon phonon-backend-gstreamer phonon-backend-gstreamer-common phonon4qt5 phonon4qt5-backend-vlc \
      pinentry-gnome3 libfrei0r-ocaml frei0r-plugins pkg-config plasma-scriptengine-javascript \
      po-debconf policykit-1 policykit-1-gnome poppler-data poppler-utils \
      printer-driver-gutenprint proj-data psf-unifont psmisc psutils \
      pulseaudio pulseaudio-module-bluetooth pulseaudio-utils \
-     puredata-utils puredata-gui puredata-import puredata-extra \
-     pd-aubio pd-cyclone pd-deken \
      pxelinux qdbus qjackctl \
      qml-module-org-kde-games-core qml-module-qtgraphicaleffects qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2 \
      qtchooser qtcore4-l10n \
      r-base-core r-cran-boot r-cran-class r-cran-cluster r-cran-codetools r-cran-foreign r-cran-kernsmooth r-cran-lattice r-cran-mass r-cran-matrix r-cran-mgcv r-cran-nlme r-cran-nnet r-cran-rgtk2 r-cran-rpart r-cran-spatial r-cran-survival r-recommended \
-     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scratch scribus scribus-data \
+     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scribus scribus-data \
      sgml-base sgml-data shared-mime-info simple-scan socat sound-theme-freedesktop \
-     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo swell-foop \
+     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo \
      syslinux syslinux-common \
      system-config-printer system-config-printer-common system-config-printer-udev \
-     t1utils tali \
+     t1utils \
      task-brazilian-portuguese task-brazilian-portuguese-desktop task-desktop task-laptop task-print-server \
      tcl tcl8.6 \
      testng \
@@ -208,9 +206,9 @@ lb config noauto \
      ucf udisks2 unicon-imc2 uno-libs3 unpaper unzip update-inetd upower ure \
      usb-modeswitch usb-modeswitch-data usbmuxd usbutils \
      user-setup util-linux-locales uuid-runtime va-driver-all \
-     vcdimager vdpau-driver-all vinagre vino \
+     vdpau-driver-all vinagre vino \
      vlc vlc-bin vlc-data vlc-l10n vlc-plugin-base vlc-plugin-video-output \
-     voikko-fi whois wireless-tools wodim wpasupplicant \
+     voikko-fi whois wireless-tools wpasupplicant \
      x11-apps x11-common x11-session-utils x11-utils x11-xkb-utils x11-xserver-utils \
      xaos xapps-common xauth xbitmaps xbrlapi \
      xdg-user-dirs xdg-user-dirs-gtk xdg-utils \
@@ -245,7 +243,7 @@ lb config noauto \
      firmware-ralink  firmware-realtek firmware-samsung firmware-siano \
      firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
-     intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
-     ubertooth-firmware ssh-askpass-gnome" \
+     intel-microcode ipxe-qemu midisport-firmware sigrok-firmware-fx2lafw \
+     ssh-askpass-gnome" \
      --source "false" \
      "${@}"
