@@ -107,7 +107,7 @@ lb config noauto \
      b43-fwcutter bc bdf2psf bind9-host binutils blinken blt blueman bluetooth bluez \
      bluez-cups bluez-firmware bluez-obexd bluez-tools bnd brasero-cdrkit brasero-common \
      busybox bzip2 ca-certificates ca-certificates-java caribou cdrdao cheese cheese-common \
-     jupyter-notebook cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
+      cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
      coinor-libcoinutils3v5 coinor-libosi1v5 colord colord-data \
      composer console-setup console-setup-linux cpp cracklib-runtime \
      crda culmus cups cups-browsed cups-bsd cups-client cups-common \
