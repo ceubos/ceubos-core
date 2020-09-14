@@ -91,7 +91,7 @@ lb config noauto \
      live-task-cinnamon task-cinnamon-desktop dosfstools nautilus-dropbox \
      apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
      doxygen vim openscenegraph libopenthreads20 libopenthreads20 openscenegraph \
-     openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
+     openscenegraph-doc openscenegraph-examples onboard mate-themes \
      libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
@@ -116,10 +116,10 @@ lb config noauto \
      default-jdk default-jdk-headless default-jre default-jre-headless \
      default-mysql-client desktop-base desktop-file-utils \
      dh-autoreconf dh-strip-nondeterminism dictionaries-common \
-     djvulibre-bin dkms dnsutils docbook-xml docbook-xsl dreamchess \
-     dreamchess-data dvdauthor efibootmgr eog espeak-ng-data exfat-fuse \
-     exfat-utils extlinux ffmpeg file file-roller finger  five-or-more \
-     fontconfig fontconfig-config four-in-a-row freeglut3 fritzing \
+     djvulibre-bin dkms dnsutils docbook-xml docbook-xsl \
+     efibootmgr eog espeak-ng-data exfat-fuse \
+     exfat-utils ffmpeg file file-roller finger \
+     fontconfig fontconfig-config freeglut3 fritzing \
      fritzing-data fritzing-parts fuse fxload g++ gawk gconf-service \
      gconf2 gconf2-common gcr \
      gdebi gdebi-core \
@@ -129,11 +129,11 @@ lb config noauto \
      git git-gui git-man gkbd-capplet \
      gnome-accessibility-themes gnome-backgrounds gnome-bluetooth gnome-calculator \
      gnome-control-center gnome-control-center-data gnome-desktop3-data \
-     gnome-font-viewer gnome-keyring gnome-klotski gnome-mahjongg gnome-mime-data \
-     gnome-mines gnome-nettool gnome-nibbles gnome-online-accounts gnome-orca \
-     gnome-robots gnome-screenshot gnome-settings-daemon gnome-sudoku \
-     gnome-sushi gnome-system-monitor gnome-taquin gnome-terminal \
-     gnome-terminal-data gnome-tetravex gnome-themes-standard \
+     gnome-font-viewer gnome-keyring gnome-klotski gnome-mime-data \
+     gnome-nettool gnome-online-accounts gnome-orca \
+     gnome-screenshot gnome-settings-daemon \
+     gnome-sushi gnome-system-monitor gnome-terminal \
+     gnome-terminal-data gnome-themes-standard \
      adwaita-icon-theme gnome-user-guide gnome-user-share gnome-video-effects \
      nautilus-gtkhash nautilus-emblems nautilus-scripts-manager nautilus-share nautilus-image-converter \
      gir1.2-accountsservice-1.0 gir1.2-appindicator3-0.1 gir1.2-atk-1.0 gir1.2-atspi-2.0 \
@@ -156,14 +156,14 @@ lb config noauto \
      gtk-update-icon-cache gtk2-engines \
      gvfs gvfs-backends gvfs-bin gvfs-common gvfs-daemons gvfs-fuse gvfs-libs \
      grub-common grub-efi-amd64 grub-efi-amd64-bin grub-pc-bin grub2-common \
-     hddtemp hfsplus hfsutils hicolor-icon-theme hitori hspell hspell-gui \
-     i965-va-driver iagno imagemagick imagemagick-6-common imagemagick-6.q16 \
+     hddtemp hfsplus hfsutils hicolor-icon-theme hspell hspell-gui \
+     i965-va-driver imagemagick imagemagick-6-common imagemagick-6.q16 \
      initramfs-tools initramfs-tools-core intltool-debian \
      inxi iptraf iptraf-ng iputils-tracepath iso-codes iso-flags-png-320x240 \
      isolinux itop iw jackd jackd2 jsonlint \
      kde-l10n-ptbr libkf5khtml-bin kde-runtime kde-runtime-data kdelibs-bin kdelibs5-data kdelibs5-plugins kdoctools kexec-tools kio klibc-utils \
      konwert konwert-filters kpackagetool5 krb5-locales \
-     lightsoff live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
+     live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
      locales lp-solve lsb-release lsof madfuload media-player-info melt \
      menu-l10n mesa-utils mesa-va-drivers mesa-vdpau-drivers \
      metacity metacity-common \
@@ -181,25 +181,21 @@ lb config noauto \
      patch patchutils \
      pciutils \
      perl perl-openssl-defaults perl-tk \
-     phalanx \
      phonon phonon-backend-gstreamer phonon-backend-gstreamer-common phonon4qt5 phonon4qt5-backend-vlc \
      pinentry-gnome3 libfrei0r-ocaml frei0r-plugins pkg-config plasma-scriptengine-javascript \
      po-debconf policykit-1 policykit-1-gnome poppler-data poppler-utils \
      printer-driver-gutenprint proj-data psf-unifont psmisc psutils \
      pulseaudio pulseaudio-module-bluetooth pulseaudio-utils \
-     puredata-utils puredata-gui puredata-import puredata-extra \
-     pd-aubio pd-cyclone pd-deken \
      pxelinux qdbus qjackctl \
      qml-module-org-kde-games-core qml-module-qtgraphicaleffects qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2 \
      qtchooser qtcore4-l10n \
-     quadrapassel \
      r-base-core r-cran-boot r-cran-class r-cran-cluster r-cran-codetools r-cran-foreign r-cran-kernsmooth r-cran-lattice r-cran-mass r-cran-matrix r-cran-mgcv r-cran-nlme r-cran-nnet r-cran-rgtk2 r-cran-rpart r-cran-spatial r-cran-survival r-recommended \
-     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scratch scribus scribus-data \
+     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scribus scribus-data \
      sgml-base sgml-data shared-mime-info simple-scan socat sound-theme-freedesktop \
-     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo swell-foop \
+     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo \
      syslinux syslinux-common \
      system-config-printer system-config-printer-common system-config-printer-udev \
-     t1utils tali \
+     t1utils \
      task-brazilian-portuguese task-brazilian-portuguese-desktop task-desktop task-laptop task-print-server \
      tcl tcl8.6 \
      testng \
@@ -246,7 +242,7 @@ lb config noauto \
      firmware-ralink  firmware-realtek firmware-samsung firmware-siano \
      firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
-     intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
-     ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
+     intel-microcode ipxe-qemu midisport-firmware sigrok-firmware-fx2lafw \
+     ssh-askpass-gnome xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
      --source "false" \
      "${@}"
