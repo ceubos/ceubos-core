@@ -28,7 +28,7 @@ lb config noauto \
      --binary-filesystem "ext4" \
      --initramfs live-boot \
      --initramfs-compression gzip \
-     --loadlin fale \
+     --loadlin false \
      --win32-loader false \
      --iso-application ceub-os \
      --iso-volume ceub-os \
@@ -104,7 +104,7 @@ lb config noauto \
      alsa-firmware-loaders alsa-oss alsa-utils anacron apg aspell aspell-pt-br \
      at-spi2-core audacity audacity-data autoconf automake autopoint  avahi-daemon \
      brasero brasero-cdrkit brasero-common cdrdao dvdauthor growisofs wodim vcdimager \
-     b43-fwcutter bc bdf2psf bind9-host binutils blinken blt blueman bluetooth bluez \
+     b43-fwcutter bc bdf2psf bind9-host binutils blt blueman bluetooth bluez \
      bluez-cups bluez-firmware bluez-obexd bluez-tools bnd brasero-cdrkit brasero-common \
      busybox bzip2 ca-certificates ca-certificates-java caribou cdrdao cheese cheese-common \
       cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
