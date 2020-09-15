@@ -90,8 +90,8 @@ lb config noauto \
      cinnamon-plasma-theme arc-icons-remix arc-theme cinnamon-l10n \
      live-task-cinnamon task-cinnamon-desktop dosfstools nautilus-dropbox \
      apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
-     doxygen vim openscenegraph libopenthreads20 libopenthreads20 openscenegraph \
-     openscenegraph-doc openscenegraph-examples onboard mate-themes \
+     doxygen vim libopenthreads20 libopenthreads20 openscenegraph \
+     openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
      libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
