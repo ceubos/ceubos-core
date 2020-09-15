@@ -28,7 +28,7 @@ lb config noauto \
      --binary-filesystem "ext4" \
      --initramfs live-boot \
      --initramfs-compression gzip \
-     --loadlin fale \
+     --loadlin false \
      --win32-loader false \
      --iso-application ceub-os \
      --iso-volume ceub-os \
@@ -104,7 +104,7 @@ lb config noauto \
      alsa-firmware-loaders alsa-oss alsa-utils anacron apg aspell aspell-pt-br \
      at-spi2-core audacity audacity-data autoconf automake autopoint  avahi-daemon \
      brasero brasero-cdrkit brasero-common cdrdao dvdauthor growisofs wodim vcdimager \
-     b43-fwcutter bc bdf2psf bind9-host binutils blinken blt blueman bluetooth bluez \
+     b43-fwcutter bc bdf2psf bind9-host binutils blt blueman bluetooth bluez \
      bluez-cups bluez-firmware bluez-obexd bluez-tools bnd brasero-cdrkit brasero-common \
      busybox bzip2 ca-certificates ca-certificates-java caribou cdrdao cheese cheese-common \
       cjs coinor-libcbc3 coinor-libcgl1 coinor-libclp1 coinor-libcoinmp1v5 \
@@ -118,7 +118,7 @@ lb config noauto \
      dh-autoreconf dh-strip-nondeterminism dictionaries-common \
      djvulibre-bin dkms dnsutils docbook-xml docbook-xsl dreamchess \
      dreamchess-data dvdauthor efibootmgr eog espeak-ng-data exfat-fuse \
-     exfat-utils extlinux ffmpeg file file-roller finger  five-or-more \
+     exfat-utils extlinux ffmpeg file file-roller finger \
      fontconfig fontconfig-config four-in-a-row freeglut3 fritzing \
      fritzing-data fritzing-parts fuse fxload g++ gawk gconf-service \
      gconf2 gconf2-common gcr \
@@ -156,14 +156,14 @@ lb config noauto \
      gtk-update-icon-cache gtk2-engines \
      gvfs gvfs-backends gvfs-bin gvfs-common gvfs-daemons gvfs-fuse gvfs-libs \
      grub-common grub-efi-amd64 grub-efi-amd64-bin grub-pc-bin grub2-common \
-     hddtemp hfsplus hfsutils hicolor-icon-theme hitori hspell hspell-gui \
-     i965-va-driver iagno imagemagick imagemagick-6-common imagemagick-6.q16 \
+     hddtemp hfsplus hfsutils hicolor-icon-theme hspell hspell-gui \
+     i965-va-driver imagemagick imagemagick-6-common imagemagick-6.q16 \
      initramfs-tools initramfs-tools-core intltool-debian \
      inxi iptraf iptraf-ng iputils-tracepath iso-codes iso-flags-png-320x240 \
      isolinux itop iw jackd jackd2 jsonlint \
      kde-l10n-ptbr libkf5khtml-bin kde-runtime kde-runtime-data kdelibs-bin kdelibs5-data kdelibs5-plugins kdoctools kexec-tools kio klibc-utils \
      konwert konwert-filters kpackagetool5 krb5-locales \
-     lightsoff live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
+     live-boot live-config live-config-systemd live-tools live-task-localisation live-task-recommended \
      locales lp-solve lsb-release lsof madfuload media-player-info melt \
      menu-l10n mesa-utils mesa-va-drivers mesa-vdpau-drivers \
      metacity metacity-common \
@@ -194,12 +194,12 @@ lb config noauto \
      qtchooser qtcore4-l10n \
      quadrapassel \
      r-base-core r-cran-boot r-cran-class r-cran-cluster r-cran-codetools r-cran-foreign r-cran-kernsmooth r-cran-lattice r-cran-mass r-cran-matrix r-cran-mgcv r-cran-nlme r-cran-nnet r-cran-rgtk2 r-cran-rpart r-cran-spatial r-cran-survival r-recommended \
-     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scratch scribus scribus-data \
+     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scratch \
      sgml-base sgml-data shared-mime-info simple-scan socat sound-theme-freedesktop \
-     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo swell-foop \
+     spice-client-glib-usb-acl-helper sshfs ssl-cert sudo \
      syslinux syslinux-common \
      system-config-printer system-config-printer-common system-config-printer-udev \
-     t1utils tali \
+     t1utils \
      task-brazilian-portuguese task-brazilian-portuguese-desktop task-desktop task-laptop task-print-server \
      tcl tcl8.6 \
      testng \
@@ -216,7 +216,7 @@ lb config noauto \
      xaos xapps-common xauth xbitmaps xbrlapi \
      xdg-user-dirs xdg-user-dirs-gtk xdg-utils \
      xdmx xdmx-tools \
-     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-unifont xfonts-utils \\
+     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-unifont xfonts-utils \
      xinit xinput-calibrator \
      xkb-data xml-core xnest \
      xorg xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra \
