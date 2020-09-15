@@ -216,7 +216,7 @@ lb config noauto \
      xaos xapps-common xauth xbitmaps xbrlapi \
      xdg-user-dirs xdg-user-dirs-gtk xdg-utils \
      xdmx xdmx-tools \
-     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-unifont xfonts-utils \\
+     xfonts-100dpi xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-unifont xfonts-utils \
      xinit xinput-calibrator \
      xkb-data xml-core xnest \
      xorg xscreensaver-data xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra \
