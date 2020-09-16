@@ -99,8 +99,8 @@ lb config noauto \
      fonts-dejavu-core fonts-dejavu-extra fonts-opensymbol ttf-mscorefonts-installer \
      qemu-utils qemu-block-extra gir1.2-spiceclientgtk-3.0 virt-manager ovmf \
      libvirt-sanlock libvirt-clients libvirt-daemon-system munin-libvirt-plugins \
-     nbdkit-plugin-libvirt qemu-kvm ebtables dnsmasq puredata-utils puredata-gui \
-     puredata-import puredata-extra pd-aubio pd-cyclone pd-deken accountsservice acl \
+     nbdkit-plugin-libvirt qemu-kvm ebtables dnsmasq \
+     pd-aubio pd-cyclone pd-deken accountsservice acl \
      alsa-firmware-loaders alsa-oss alsa-utils anacron apg aspell aspell-pt-br \
      at-spi2-core audacity audacity-data autoconf automake autopoint  avahi-daemon \
      brasero brasero-cdrkit brasero-common cdrdao dvdauthor growisofs wodim vcdimager \
@@ -123,13 +123,13 @@ lb config noauto \
      fritzing-data fritzing-parts fuse fxload g++ gawk gconf-service \
      gconf2 gconf2-common gcr \
      gdebi gdebi-core \
-     gdisk geary \
+     gdisk \
      gedit gedit-common gedit-plugins \
      genisoimage ghostscript gist \
      git git-gui git-man gkbd-capplet \
      gnome-accessibility-themes gnome-backgrounds gnome-bluetooth gnome-calculator \
      gnome-control-center gnome-control-center-data gnome-desktop3-data \
-     gnome-font-viewer gnome-keyring gnome-klotski gnome-mime-data \
+     gnome-font-viewer gnome-keyring gnome-mime-data \
      gnome-nettool gnome-online-accounts gnome-orca \
      gnome-screenshot gnome-settings-daemon \
      gnome-sushi gnome-system-monitor gnome-terminal \
@@ -149,7 +149,7 @@ lb config noauto \
      gir1.2-soup-2.4 gir1.2-totem-1.0 gir1.2-totem-plparser-1.0 \
      gir1.2-upowerglib-1.0 gir1.2-vte-2.91 gir1.2-webkit2-4.0 \
      gir1.2-wnck-3.0 gir1.2-xapp-1.0 gir1.2-xkl-1.0 gir1.2-zeitgeist-2.0 \
-     gnote gnucap gnupg2 gocr goldendict gparted gphoto2 greybird-gtk-theme grilo-plugins-0.3 \
+     gnote gnucap gnupg2 gocr gparted gphoto2 greybird-gtk-theme grilo-plugins-0.3 \
      groff-base growisofs \
      gscan2pdf gsettings-desktop-schemas gsfonts gsfonts-x11 gstreamer1.0-alsa gstreamer1.0-clutter-3.0 gstreamer1.0-espeak gstreamer1.0-libav gstreamer1.0-nice gstreamer1.0-plugins-bad gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-pulseaudio gstreamer1.0-x \
      gthumb gthumb-data \
@@ -190,7 +190,7 @@ lb config noauto \
      qml-module-org-kde-games-core qml-module-qtgraphicaleffects qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2 \
      qtchooser qtcore4-l10n \
      r-base-core r-cran-boot r-cran-class r-cran-cluster r-cran-codetools r-cran-foreign r-cran-kernsmooth r-cran-lattice r-cran-mass r-cran-matrix r-cran-mgcv r-cran-nlme r-cran-nnet r-cran-rgtk2 r-cran-rpart r-cran-spatial r-cran-survival r-recommended \
-     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server scribus scribus-data \
+     rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server \
      sgml-base sgml-data shared-mime-info simple-scan socat sound-theme-freedesktop \
      spice-client-glib-usb-acl-helper sshfs ssl-cert sudo \
      syslinux syslinux-common \
@@ -209,7 +209,7 @@ lb config noauto \
      vlc vlc-bin vlc-data vlc-l10n vlc-plugin-base vlc-plugin-video-output \
      voikko-fi whois wireless-tools wodim wpasupplicant \
      x11-apps x11-common x11-session-utils x11-utils x11-xkb-utils x11-xserver-utils \
-     xaos xapps-common xauth xbitmaps xbrlapi \
+     xapps-common xauth xbitmaps xbrlapi \
      xdg-user-dirs xdg-user-dirs-gtk xdg-utils \
      xdmx xdmx-tools \
      xfonts-100dpi xfonts-75dpi xfonts-base xfonts-encodings xfonts-scalable xfonts-unifont xfonts-utils \
@@ -243,6 +243,7 @@ lb config noauto \
      firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware sigrok-firmware-fx2lafw \
-     ssh-askpass-gnome xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
+     ssh-askpass-gnome xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 \
+     docker-ce docker-ce-cli containerd.io elasticsearch"
      --source "false" \
      "${@}"
