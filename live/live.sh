@@ -244,6 +244,6 @@ lb config noauto \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware sigrok-firmware-fx2lafw \
      ssh-askpass-gnome xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 \
-     docker-ce docker-ce-cli containerd.io elasticsearch"
+     docker-ce docker-ce-cli containerd.io elasticsearch" \
      --source "false" \
      "${@}"
