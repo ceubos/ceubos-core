@@ -89,7 +89,7 @@ lb config noauto \
      live-task-cinnamon task-cinnamon-desktop dosfstools nautilus-dropbox \
      apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
      doxygen vim libopenthreads20 libopenthreads20 openscenegraph \
-     openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
+     openscenegraph-doc openscenegraph-examples eviacam mate-themes \
      libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
@@ -184,10 +184,9 @@ lb config noauto \
      po-debconf policykit-1 policykit-1-gnome poppler-data poppler-utils \
      printer-driver-gutenprint proj-data psf-unifont psmisc psutils \
      pulseaudio pulseaudio-module-bluetooth pulseaudio-utils \
-     pxelinux qdbus qjackctl \
+     pxelinux qdbus \
      qml-module-org-kde-games-core qml-module-qtgraphicaleffects qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2 \
      qtchooser qtcore4-l10n \
-     r-base-core r-cran-boot r-cran-class r-cran-cluster r-cran-codetools r-cran-foreign r-cran-kernsmooth r-cran-lattice r-cran-mass r-cran-matrix r-cran-mgcv r-cran-nlme r-cran-nnet r-cran-rgtk2 r-cran-rpart r-cran-spatial r-cran-survival r-recommended \
      rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server \
      sgml-base sgml-data shared-mime-info simple-scan socat sound-theme-freedesktop \
      spice-client-glib-usb-acl-helper sshfs ssl-cert sudo \
