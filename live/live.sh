@@ -35,7 +35,7 @@ lb config noauto \
      --memtest memtest86+ \
      --binary-images iso-hybrid \
      --initsystem systemd \
-     --debian-installer false \
+     --debian-installer live \ #era modo false, testando live
      --debian-installer-gui false \
      --distribution buster \
      --debian-installer-distribution buster \
@@ -212,7 +212,7 @@ lb config noauto \
      vcdimager vdpau-driver-all vinagre vino \
      vlc vlc-bin vlc-data vlc-l10n vlc-plugin-base vlc-plugin-video-output \
      voikko-fi whois wireless-tools wodim wpasupplicant \
-     x11-apps x11-common x11-session-utils x11-utils x11-xkb-utils x11-xserver-utils \
+     x11-apps x11-common x11-session-utils x11-utils x11-xkb-utils \
      xaos xapps-common xauth xbitmaps xbrlapi \
      xdg-user-dirs xdg-user-dirs-gtk xdg-utils \
      xdmx xdmx-tools \
@@ -247,7 +247,7 @@ lb config noauto \
      firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
-     ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf xfce4-power-manager \
+     ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf  xfce4-power-manager \
      policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
      --source "false" \
      "${@}"
