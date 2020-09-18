@@ -35,7 +35,7 @@ lb config noauto \
      --memtest memtest86+ \
      --binary-images iso-hybrid \
      --initsystem systemd \
-     --debian-installer live \ #era modo false, testando live
+     --debian-installer false \
      --debian-installer-gui false \
      --distribution buster \
      --debian-installer-distribution buster \
