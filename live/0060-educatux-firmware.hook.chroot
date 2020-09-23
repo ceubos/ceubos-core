@@ -285,7 +285,7 @@ sudo ldconfig -vvvv
 # SecondLife
 sudo apt -t buster-backports install --yes --force-yes -y libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa:i386 gstreamer1.0-pulseaudio:i386
 
-# EducatuX
+# INSTALANDO O CALAMARES
 sudo apt install --yes --force-yes -y calamares-settings-educatux-hybrid calamares
 
 # modules
