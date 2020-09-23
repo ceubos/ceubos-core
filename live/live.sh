@@ -248,6 +248,6 @@ lb config noauto \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
      ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf  xfce4-power-manager \
-     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 cmake boost extra-cmake-modules libpwquality qt5ct qt5-location qt5-svg qt5-webengine yaml-cpp hwinfo upower qt5-tools solid python " \
+     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 cmake boost extra-cmake-modules libpwquality qt5ct qt5-location qt5-svg qt5-webengine yaml-cpp hwinfo qt5-tools python" \
      --source "false" \
      "${@}"
