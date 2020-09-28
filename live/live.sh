@@ -116,7 +116,7 @@ lb config noauto \
      dh-autoreconf dh-strip-nondeterminism dictionaries-common \
      djvulibre-bin dkms dnsutils docbook-xml docbook-xsl \
      efibootmgr eog espeak-ng-data exfat-fuse \
-     exfat-utils ffmpeg file file-roller finger \
+     exfat-utils extlinux ffmpeg file file-roller finger \
      fontconfig fontconfig-config freeglut3 fritzing \
      fritzing-data fritzing-parts fuse fxload g++ gawk gconf-service \
      gconf2 gconf2-common gcr \
