@@ -184,7 +184,7 @@ lb config noauto \
      po-debconf policykit-1 policykit-1-gnome poppler-data poppler-utils \
      printer-driver-gutenprint proj-data psf-unifont psmisc psutils \
      pulseaudio pulseaudio-module-bluetooth pulseaudio-utils \
-     pxelinux qdbus \
+     pxelinux qdbus qjackctl \
      qml-module-org-kde-games-core qml-module-qtgraphicaleffects qml-module-qtmultimedia qml-module-qtquick-controls qml-module-qtquick-dialogs qml-module-qtquick-layouts qml-module-qtquick-privatewidgets qml-module-qtquick-window2 qml-module-qtquick2 \
      qtchooser qtcore4-l10n \
      rake recordmydesktop rsync samba-libs sane-utils sc3-plugins-server \
