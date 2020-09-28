@@ -239,7 +239,7 @@ lb config noauto \
      firmware-ralink  firmware-realtek firmware-samsung firmware-siano \
      firmware-ti-connectivity firmware-zd1211 grub-firmware-qemu \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
-     intel-microcode ipxe-qemu midisport-firmware sigrok-firmware-fx2lafw \
+     intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
      ssh-askpass-gnome xfce4-power-manager policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
      --source "false" \
      "${@}"
