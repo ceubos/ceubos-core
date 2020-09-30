@@ -1,0 +1,7 @@
+auto
+local
+cache
+chroot*
+live-image-amd64*
+.build
+binary
