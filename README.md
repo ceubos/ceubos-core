@@ -17,7 +17,7 @@ Apos isso, atualizar os seus repostorios e a maquina
 
 # Compilar sua primeira versao
 1. Clone o repositorio para sua maquina \
-`git clone https://github.com/francisco-pc7063/ceubos-core.git`
+`git clone https://github.com/ceubos/ceubos-core.git`
 2. Va para o diretorio que possui as instrucoes do live build \
 `cd ./ceubos-core/live`
 3. Dentro do repositorio, ha um script chamado **live.sh** executeu e depois mande o live-build construir a iso
