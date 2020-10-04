@@ -59,7 +59,7 @@ lb config noauto \
      --debconf-priority critical \
      --iso-preparer "CEUB" \
      --iso-publisher "CEUB - https://www.ceubos.com.br" \
-     --keyring-packages "remmina wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
+     --keyring-packages "remmina remmina-common wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
      glx-alternative-mesa=1.2.0~bpo10+1 update-glx=1.2.0~bpo10+1 glx-diversions=1.2.0~bpo10+1 \
      python3-dev arduino arduino-mk dfu-programmer \
      calamares shotcut btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
