@@ -18,21 +18,11 @@ images:
 <<<<<<< HEAD
     productLogo:         "logo.jpg"
     productIcon:         "logo.jpg"
-=======
-    productLogo:         "logo.png"
-    productIcon:         "logo.png"
->>>>>>> eduardo
     productWelcome:      "welcome.png"
 
 slideshow:               "show.qml"
 
 style:
-<<<<<<< HEAD
    sidebarBackground:    "#552f83"
    sidebarText:          "#FFFFFF"
    sidebarTextSelect:    "#ffc900"
-=======
-   sidebarBackground:    "#2c3133"
-   sidebarText:          "#FFFFFF"
-   sidebarTextSelect:    "#4d7079"
->>>>>>> eduardo
