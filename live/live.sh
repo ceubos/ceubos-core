@@ -235,7 +235,7 @@ lb config noauto \
      xvfb xxkb xz-utils yelp yelp-xsl zeitgeist-core zenity zenity-common \
      zip kpartx alsa-firmware-loaders amd64-microcode atmel-firmware \
      b43-fwcutter bluez-firmware dahdi-firmware-nonfree dfu-programmer \
-     dns323-firmware-tools expeyes-firmware-dev firmware-adi \
+     dns323-firmware-tools firmware-adi \
      firmware-amd-graphics firmware-ath9k-htc firmware-ath9k-htc-dbgsym \
      firmware-atheros firmware-b43-installer firmware-b43legacy-installer \
      firmware-bnx2   firmware-bnx2x firmware-brcm80211 firmware-cavium \
