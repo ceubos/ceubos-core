@@ -116,33 +116,33 @@ EndSection
 EOF
 
 # bumblebee 1
-#cat > /etc/bumblebee/bumblebee.conf <<'EOF'
+cat > /etc/bumblebee/bumblebee.conf <<'EOF'
 # Configuration file for Bumblebee. Values should **not** be put between quotes
 
 ## Server options. Any change made in this section will need a server restart
 # to take effect.
-#[bumblebeed]
+[bumblebeed]
 # The secondary Xorg server DISPLAY number
 VirtualDisplay=:8
 # Should the unused Xorg server be kept running? Set this to true if waiting
 # for X to be ready is too long and don't need power management at all.
-#KeepUnusedXServer=false
+KeepUnusedXServer=false
 # The name of the Bumbleblee server group name (GID name)
-#ServerGroup=bumblebee
+ServerGroup=bumblebee
 # Card power state at exit. Set to false if the card shoud be ON when Bumblebee
 # server exits.
 TurnCardOffAtExit=false
 # The default behavior of '-f' option on optirun. If set to "true", '-f' will
 # be ignored.
-#NoEcoModeOverride=false
+NoEcoModeOverride=false
 # The Driver used by Bumblebee server. If this value is not set (or empty),
 # auto-detection is performed. The available drivers are nvidia and nouveau
 # (See also the driver-specific sections below)
 Driver=
 # Directory with a dummy config file to pass as a -configdir to secondary X
-#XorgConfDir=/etc/bumblebee/xorg.conf.d
+XorgConfDir=/etc/bumblebee/xorg.conf.d
 # Xorg binary to run
-#XorgBinary=/usr/lib/xorg/Xorg
+XorgBinary=/usr/lib/xorg/Xorg
 
 ## Client options. Will take effect on the next optirun executed.
 [optirun]
@@ -179,8 +179,8 @@ PMMethod=auto
 LibraryPath=/usr/lib/x86_64-linux-gnu/nvidia:/usr/lib/i386-linux-gnu/nvidia:/usr/lib/x86_64-linux-gnu:/usr/lib/i386-linux-gnu
 # comma-separated path of the directory containing nvidia_drv.so and the
 # default Xorg modules path
-#XorgModulePath=/usr/lib/nvidia,/usr/lib/xorg/modules
-#XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
+XorgModulePath=/usr/lib/nvidia,/usr/lib/xorg/modules
+XorgConfFile=/etc/bumblebee/xorg.conf.nvidia
 # If set to true, will always unload the kernel module(s) even with
 # PMMethod=none - useful for newer Optimus models on which the kernel power
 # management works out of the box to power the card on/off without bbswitch.
@@ -284,6 +284,9 @@ sudo ldconfig -vvvv
 
 # SecondLife
 sudo apt -t buster-backports install --yes --force-yes -y libgtk2.0-0:i386 libpangox-1.0-0:i386 libpangoxft-1.0-0:i386 libidn11:i386 libglu1-mesa:i386 gstreamer1.0-pulseaudio:i386
+
+# INSTALANDO O CALAMARES
+sudo apt install --yes --force-yes -y calamares-settings-educatux-hybrid calamares
 
 # modules
 cat > /etc/modules <<'EOF'
