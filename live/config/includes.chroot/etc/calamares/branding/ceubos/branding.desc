@@ -1,0 +1,27 @@
+---
+componentName:   ceubos
+welcomeStyleCalamares: true
+
+strings:
+    productName:         CeubOS GNU/Linux
+    shortProductName:    CeubOS
+    version:             10 (buster)
+    shortVersion:        10
+    versionedName:       Ceubos (buster)
+    shortVersionedName:  CeubOS
+    bootloaderEntryName: CeubOS
+    #productUrl:          https://www.educatux.com.br
+    #supportUrl:          https://www.educatux.com.br/#contato
+    #releaseNotesUrl:     https://www.educatux.com.br/iso
+
+images:
+    productLogo:         "logo.png"
+    productIcon:         "logo.png"
+    productWelcome:      "welcome.png"
+
+slideshow:               "show.qml"
+
+style:
+   sidebarBackground:    "#2c3133"
+   sidebarText:          "#FFFFFF"
+   sidebarTextSelect:    "#4d7079"
