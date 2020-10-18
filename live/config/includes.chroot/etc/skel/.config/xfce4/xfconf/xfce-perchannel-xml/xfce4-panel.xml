@@ -6,10 +6,10 @@
     <value type="int" value="1"/>
     <value type="int" value="2"/>
     <property name="panel-1" type="empty">
-      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="position" type="string" value="p=6;x=512;y=16"/>
       <property name="length" type="uint" value="100"/>
       <property name="position-locked" type="bool" value="true"/>
-      <property name="size" type="uint" value="16"/>
+      <property name="size" type="uint" value="29"/>
       <property name="plugin-ids" type="array">
         <value type="int" value="1"/>
         <value type="int" value="3"/>
@@ -30,7 +30,8 @@
       <property name="enter-opacity" type="uint" value="100"/>
       <property name="leave-opacity" type="uint" value="100"/>
       <property name="mode" type="uint" value="0"/>
-      <property name="nrows" type="uint" value="2"/>
+      <property name="nrows" type="uint" value="1"/>
+      <property name="disable-struts" type="bool" value="false"/>
     </property>
     <property name="panel-2" type="empty">
       <property name="position" type="string" value="p=10;x=0;y=0"/>
@@ -49,14 +50,22 @@
   </property>
   <property name="plugins" type="empty">
     <property name="plugin-1" type="string" value="applicationsmenu">
-      <property name="button-icon" type="string" value="/usr/share/pixmaps/xfce4_xicon4.png"/>
+      <property name="button-icon" type="string" value="/usr/share/pixmaps/debian-logo.png"/>
       <property name="show-tooltips" type="bool" value="false"/>
       <property name="show-generic-names" type="bool" value="false"/>
       <property name="button-title" type="string" value="Aplicativos"/>
       <property name="custom-menu" type="bool" value="false"/>
     </property>
     <property name="plugin-2" type="string" value="actions"/>
-    <property name="plugin-3" type="string" value="tasklist"/>
+    <property name="plugin-3" type="string" value="tasklist">
+      <property name="grouping" type="uint" value="0"/>
+      <property name="flat-buttons" type="bool" value="false"/>
+      <property name="show-labels" type="bool" value="true"/>
+      <property name="show-handle" type="bool" value="true"/>
+      <property name="switch-workspace-on-unminimize" type="bool" value="true"/>
+      <property name="include-all-workspaces" type="bool" value="false"/>
+      <property name="show-only-minimized" type="bool" value="false"/>
+    </property>
     <property name="plugin-15" type="string" value="separator">
       <property name="expand" type="bool" value="true"/>
       <property name="style" type="uint" value="0"/>

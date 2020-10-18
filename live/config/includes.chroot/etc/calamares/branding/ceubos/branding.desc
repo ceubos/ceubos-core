@@ -10,9 +10,7 @@ strings:
     versionedName:       Ceubos (buster)
     shortVersionedName:  CeubOS
     bootloaderEntryName: CeubOS
-    #productUrl:          https://www.educatux.com.br
-    #supportUrl:          https://www.educatux.com.br/#contato
-    #releaseNotesUrl:     https://www.educatux.com.br/iso
+
 
 images:
     productLogo:         "logo.png"

@@ -248,6 +248,6 @@ lb config noauto \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
      ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf  xfce4-power-manager \
-     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4" \
+     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 thunar" \
      --source "false" \
      "${@}"
