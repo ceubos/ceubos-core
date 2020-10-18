@@ -1,10 +1,10 @@
 [Desktop Entry]
 Type=Application
 Version=1.0
-Name=Install EducatuX
+Name=Install CeubOS
 GenericName=Calamares Installer
 Exec=install-educatux
-Comment=Calamares — Installer for EducatuX Live
+Comment=Calamares — Installer for ceubOS
 Keywords=calamares;system;install;educatux;installer
 Icon=install-educatux
 Terminal=false

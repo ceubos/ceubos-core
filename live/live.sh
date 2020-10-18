@@ -59,7 +59,7 @@ lb config noauto \
      --debconf-priority critical \
      --iso-preparer "CEUB" \
      --iso-publisher "CEUB - https://www.ceubos.com.br" \
-     --keyring-packages "wireless-regdb=2020.04.29-2~bpo10+1 \
+     --keyring-packages "wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
      glx-alternative-mesa=1.2.0~bpo10+1 update-glx=1.2.0~bpo10+1 glx-diversions=1.2.0~bpo10+1 \
      python3-dev arduino arduino-mk dfu-programmer \
      calamares shotcut btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
@@ -235,7 +235,7 @@ lb config noauto \
      xvfb xxkb xz-utils yelp yelp-xsl zeitgeist-core zenity zenity-common \
      zip kpartx alsa-firmware-loaders amd64-microcode atmel-firmware \
      b43-fwcutter bluez-firmware dahdi-firmware-nonfree dfu-programmer \
-     dns323-firmware-tools firmware-adi \
+     dns323-firmware-tools expeyes-firmware-dev firmware-adi \
      firmware-amd-graphics firmware-ath9k-htc firmware-ath9k-htc-dbgsym \
      firmware-atheros firmware-b43-installer firmware-b43legacy-installer \
      firmware-bnx2   firmware-bnx2x firmware-brcm80211 firmware-cavium \
@@ -248,6 +248,6 @@ lb config noauto \
      hannah-foo2zjs hdmi2usb-fx2-firmware hdmi2usb-mode-switch \
      intel-microcode ipxe-qemu midisport-firmware ovmf sigrok-firmware-fx2lafw \
      ubertooth-firmware ssh-askpass-gnome x11-xserver-utils gtk2-engines gtk2-engines-pixbuf  xfce4-power-manager \
-     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 plymouth plymouth-themes plymouth-themes-solar" \
+     policykit-1 xfdesktop4 xfce4-panel xfce4-session xfwm4 thunar" \
      --source "false" \
-    "${@}"
+     "${@}"
