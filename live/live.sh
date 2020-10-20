@@ -20,7 +20,7 @@ LINUX_HEADERS="linux-headers-5.7.0-0.bpo.2"
 lb config noauto \
      --architectures amd64 \
      --mode "debian" \
-     --linux-packages "linux-image-5.7.0-0.bpo.2 linux-headers-5.7.0-0.bpo.2" \
+     --linux-packages "linux-image-5.8.0-0.bpo.2 linux-headers-5.8.0-0.bpo.2" \
      --bootloader "syslinux,grub-efi" \
      --system live \
      --compression gzip \
