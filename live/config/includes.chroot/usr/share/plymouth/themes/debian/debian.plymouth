@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=debian
+Description=A theme that features the Ubuntu logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/debian
+ScriptFile=/usr/share/plymouth/themes/debian/debian.script
