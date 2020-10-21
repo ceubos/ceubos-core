@@ -1,0 +1,11 @@
+[Unit]
+Description=AddUser Ceubos
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/adduser.sh
+
+[Install]
+WantedBy=multi-user.target
+
+

@@ -1,0 +1,4 @@
+[Daemon]
+Theme=debian-novo
+ShowDelay=0
+DeviceTimeout=5

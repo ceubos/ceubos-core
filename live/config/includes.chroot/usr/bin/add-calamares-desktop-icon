@@ -1,0 +1,24 @@
+#!/bin/sh
+# Creates an "Install EducatuX" icon on the live session tested with:
+# Xfce, LXDE, LXqt, Gnome, KDE, Mate, Cinnamon
+
+
+# Create ~/Desktop just in case this runs before the xdg folder
+# creation script.
+
+
+# Among the Debian desktop environments, LXDE is the only one
+# that behaves completely different.
+if [ -f /usr/bin/lxsession ]; then
+    echo "[Desktop Entry]" > ~/educatux/install-educatux.desktop
+    echo "Type=Link" >> ~/educatux/install-educatux.desktop
+    echo "Name=Install EducatuX" >> ~/educatux/install-educatux.desktop
+    echo "Icon=install-educatux" >> ~/educatux/install-educatux.desktop
+    echo "URL=/usr/share/applications/install-educatux.desktop" \
+          >> ~/educatux/install-educatux.desktop
+else
+    cp /usr/share/applications/install-educatux.desktop ~/educatux
+    # Xfce needs this executable otherwise it complains, everything
+    # else doesn't seem to care either way.
+    chmod +x ~/educatux/install-educatux.desktop
+fi

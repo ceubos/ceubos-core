@@ -1,0 +1,4 @@
+deb http://mirror.aarnet.edu.au/pub/neurodebian data main contrib non-free
+#deb-src http://mirror.aarnet.edu.au/pub/neurodebian data main contrib non-free
+deb http://mirror.aarnet.edu.au/pub/neurodebian buster main contrib non-free
+#deb-src http://mirror.aarnet.edu.au/pub/neurodebian buster main contrib non-free
