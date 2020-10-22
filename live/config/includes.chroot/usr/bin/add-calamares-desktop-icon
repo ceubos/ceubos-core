@@ -1,5 +1,5 @@
 #!/bin/sh
-# Creates an "Install EducatuX" icon on the live session tested with:
+# Creates an "Install Ceubos" icon on the live session tested with:
 # Xfce, LXDE, LXqt, Gnome, KDE, Mate, Cinnamon
 
 
@@ -10,15 +10,15 @@
 # Among the Debian desktop environments, LXDE is the only one
 # that behaves completely different.
 if [ -f /usr/bin/lxsession ]; then
-    echo "[Desktop Entry]" > ~/install-ceubos.desktop
-    echo "Type=Link" >> ~/install-ceubos.desktop
-    echo "Name=Install CeubOs" >> ~/install-ceubos.desktop
-    echo "Icon=install-ceubos" >> ~/install-ceubos.desktop
+    echo "[Desktop Entry]" > ~/ceubos/install-ceubos.desktop
+    echo "Type=Link" >> ~/ceubos/install-ceubos.desktop
+    echo "Name=Install CeubOs" >> ~/cebubos/install-ceubos.desktop
+    echo "Icon=install-ceubos" >> ~/ceubos/install-ceubos.desktop
     echo "URL=/usr/share/applications/install-ceubos.desktop" \
-          >> ~/Desktop/install-ceubos.desktop
+          >> ~/ceubos/install-ceubos.desktop
 else
-    cp /usr/share/applications/install-ceubos.desktop ~/Desktop
+    cp /usr/share/applications/install-ceubos.desktop ~/ceubos/
     # Xfce needs this executable otherwise it complains, everything
     # else doesn't seem to care either way.
-    chmod +x ~/Desktop/install-ceubos.desktop
+    chmod +x ~/ceubos/install-ceubos.desktop
 fi
