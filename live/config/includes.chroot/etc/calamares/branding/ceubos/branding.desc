@@ -7,7 +7,7 @@ strings:
     shortProductName:    CeubOS
     version:             10 (buster)
     shortVersion:        10
-    versionedName:       CeubOs (buster)
+    versionedName:       Ceubos (buster)
     shortVersionedName:  CeubOS
     bootloaderEntryName: CeubOS
 
