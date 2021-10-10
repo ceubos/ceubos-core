@@ -3,20 +3,17 @@
 \- CeubOS Core
 
 
-# Atualizar seus repositorios para o backports
+# Adicionar contrib e non-free para os repositorios
 \</etc/apt/sources.list\> \
 ```
-deb http://ftp.br.debian.org/debian/ buster main contrib non-free
-deb-src http://ftp.br.debian.org/debian/ buster main contrib non-free
+deb http://deb.debian.org/debian/ buster main non-free contrib
+deb-src http://deb.debian.org/debian/ buster main non-free contrib
 
-deb http://ftp.br.debian.org/debian/ buster-backports main contrib non-free
-deb-src http://ftp.br.debian.org/debian/ buster-backports main contrib non-free
+deb http://security.debian.org/debian-security buster/updates main non-free contrib
+deb-src http://security.debian.org/debian-security buster/updates main non-free contrib
 
-deb http://security.debian.org/debian-security buster/updates main contrib non-free
-deb-src http://security.debian.org/debian-security buster/updates main contrib non-free
-
-deb http://ftp.br.debian.org/debian/ buster-updates main contrib non-free
-deb-src http://ftp.br.debian.org/debian/ buster-updates main contrib non-free
+deb http://deb.debian.org/debian/ buster-updates main non-free contrib
+deb-src http://deb.debian.org/debian/ buster-updates main non-free contrib
 ``` 
 
 Apos isso, atualizar os seus repostorios e a maquina
@@ -43,5 +40,11 @@ sudo lb clean --all
 ./live.sh
 sudo lb build
 ```
+
+# Tags em commit
+Ao adicionar: `--no-build` no commit para evitar que o commit passe pela build do [jenkins](https://jenkins.ceubos.com.br/job/CeubOS/)
+
 # Referencias
-https://live-team.pages.debian.net/live-manual/html/live-manual/about-manual.en.html
+[live-build docs](https://live-team.pages.debian.net/live-manual/html/live-manual/about-manual.en.html)
+[live-build manual](https://manpages.debian.org/testing/live-build/live-build.7.en.html)
+[live-build team salsa](https://salsa.debian.org/live-team)
