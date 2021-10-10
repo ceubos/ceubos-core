@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 ##################################################################################################################
 #
 echo "                                 “Nos ensinem a ter liberdade novamente”  "
@@ -14,21 +14,17 @@ echo "##########      #######       ##########     #########               #####
 ##################################################################################################################
 set -e
 
-LINUX_IMAGE="linux-image-5.7.0-0.bpo.2"
-LINUX_HEADERS="linux-headers-5.7.0-0.bpo.2"
 
 lb config noauto \
      --architectures amd64 \
      --mode "debian" \
-     --linux-packages "linux-image-5.7.0-0.bpo.2 linux-headers-5.7.0-0.bpo.2" \
      --bootloader "syslinux,grub-efi" \
      --system live \
      --compression gzip \
-     --backports true \
      --binary-filesystem "ext4" \
      --initramfs live-boot \
      --initramfs-compression gzip \
-     --loadlin fale \
+     --loadlin false \
      --win32-loader false \
      --iso-application ceub-os \
      --iso-volume ceub-os \
@@ -37,8 +33,8 @@ lb config noauto \
      --initsystem systemd \
      --debian-installer false \
      --debian-installer-gui false \
-     --distribution buster \
-     --debian-installer-distribution buster \
+     --distribution bullseye \
+     --debian-installer-distribution bullseye \
      --archive-areas "main contrib non-free" \
      --updates true \
      --security true \
@@ -46,7 +42,7 @@ lb config noauto \
      --mirror-bootstrap http://httpredir.debian.org/debian/ \
      --mirror-binary http://httpredir.debian.org/debian/ \
      --mirror-binary-security http://security.debian.org/ \
-     --bootappend-live "boot=live components timezone=America/Sao_Paulo locales=pt_BR.UTF-8 keyboard-layouts=br keyboard-variants=abnt2 hostname=EducatuX username=educatux noprompt noeject autologin splash blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
+     --bootappend-live "boot=live components timezone=America/Sao_Paulo locales=pt_BR.UTF-8 keyboard-layouts=br keyboard-variants=abnt2 hostname=ceubos username=ceubos noprompt noeject autologin splash blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
      --bootappend-live-failsafe "initrd=/live/initrd boot=live persistence config memtest noapic noapm nodma nomce nolapic nomodeset nosmp splash vga=791 pti=off blacklist.nouveau=1 i915.modeset=1 gfxpayload=640x480 acpi_backlight=vendor acpi_osi=!" \
      --firmware-chroot true \
      --firmware-binary true \
@@ -59,8 +55,8 @@ lb config noauto \
      --debconf-priority critical \
      --iso-preparer "CEUB" \
      --iso-publisher "CEUB - https://www.ceubos.com.br" \
-     --keyring-packages "blueproximity wireless-regdb=2020.04.29-2~bpo10+1 qtbase5-dev \
-     glx-alternative-mesa=1.2.0~bpo10+1 update-glx=1.2.0~bpo10+1 glx-diversions=1.2.0~bpo10+1 \
+     --keyring-packages "blueproximity wireless-regdb qtbase5-dev \
+     glx-alternative-mesa update-glx glx-diversions \
      python3-dev arduino arduino-mk dfu-programmer calamares-settings-educatux-hybrid \
      calamares shotcut btrfs-progs python3-btrfs extlinux openboard flatpak snapd vrms \
      iramuteq mesa-utils-extra flashplayer-mozilla firefox-esr firefox-esr-l10n-all \
@@ -89,10 +85,10 @@ lb config noauto \
      fonts-vlgothic fonts-wqy-microhei fonts-wqy-zenhei fonts-ubuntu-title \
      cinnamon-plasma-theme arc-icons-remix arc-theme cinnamon-l10n \
      live-task-cinnamon task-cinnamon-desktop dosfstools nautilus-dropbox \
-     apt-transport-https  google-talkplugin gtk2-engines-pixbuf cifs-utils \
+     apt-transport-https google-talkplugin gtk2-engines-pixbuf cifs-utils \
      doxygen vim openscenegraph libopenthreads20 libopenthreads20 openscenegraph \
      openscenegraph-doc openscenegraph-examples eviacam onboard mate-themes \
-     libkpmcore-dev libkpmcore7 educatux-games64 fakeroot mpg123 unrar \
+     libkpmcore-dev libkpmcore7 fakeroot mpg123 unrar \
      plymouth plymouth-themes plymouth-theme-hamara xserver-xorg-input-aiptek \
      xserver-xorg-input-evdev xserver-xorg-input-kbd xserver-xorg-input-multitouch \
      xserver-xorg-input-mouse xserver-xorg-video-qxl nodejs fonts-dejavu \
@@ -139,14 +135,14 @@ lb config noauto \
      gir1.2-accountsservice-1.0 gir1.2-appindicator3-0.1 gir1.2-atk-1.0 gir1.2-atspi-2.0 \
      gir1.2-caribou-1.0 gir1.2-clutter-1.0 gir1.2-clutter-gst-3.0 gir1.2-cmenu-3.0 \
      gir1.2-cogl-1.0 gir1.2-coglpango-1.0 gir1.2-cvc-1.0 gir1.2-freedesktop \
-     gir1.2-gdesktopenums-3.0 gir1.2-gdkpixbuf-2.0 gir1.2-git2-glib-1.0 \
+     gir1.2-gdesktopenums-3.0 gir1.2-gdkpixbuf-2.0 gir1.2-ggit-1.0 \
      gir1.2-gkbd-3.0 gir1.2-glib-2.0 gir1.2-gnomebluetooth-1.0 gir1.2-gnomedesktop-3.0 \
      gir1.2-gst-plugins-base-1.0 gir1.2-gstreamer-1.0 gir1.2-gtk-3.0 \
      gir1.2-gtkclutter-1.0 gir1.2-gtksource-3.0 gir1.2-gucharmap-2.90 gir1.2-ibus-1.0 \
      gir1.2-javascriptcoregtk-4.0 gir1.2-json-1.0 gir1.2-keybinder-3.0 \
      gir1.2-meta-muffin-0.0 gir1.2-nm-1.0 gir1.2-notify-0.7 gir1.2-pango-1.0 \
      gir1.2-peas-1.0 gir1.2-polkit-1.0 gir1.2-rb-3.0 gir1.2-secret-1 \
-     gir1.2-soup-2.4 gir1.2-totem-1.0 gir1.2-totem-plparser-1.0 \
+     gir1.2-soup-2.4 gir1.2-totem-1.0 gir1.2-totemplparser-1.0 \
      gir1.2-upowerglib-1.0 gir1.2-vte-2.91 gir1.2-webkit2-4.0 \
      gir1.2-wnck-3.0 gir1.2-xapp-1.0 gir1.2-xkl-1.0 gir1.2-zeitgeist-2.0 \
      gnote gnucap gnupg2 gocr goldendict gparted gphoto2 greybird-gtk-theme grilo-plugins-0.3 \
@@ -234,7 +230,7 @@ lb config noauto \
      xserver-xorg-video-trident xserver-xorg-video-vesa xserver-xorg-video-vmware \
      xvfb xxkb xz-utils yelp yelp-xsl zeitgeist-core zenity zenity-common \
      zip kpartx alsa-firmware-loaders amd64-microcode atmel-firmware \
-     b43-fwcutter bluez-firmware dahdi-firmware-nonfree dfu-programmer \
+     b43-fwcutter bluez-firmware dahdi-firmware-nonfree \
      dns323-firmware-tools expeyes-firmware-dev firmware-adi \
      firmware-amd-graphics firmware-ath9k-htc firmware-ath9k-htc-dbgsym \
      firmware-atheros firmware-b43-installer firmware-b43legacy-installer \
