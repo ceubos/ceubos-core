@@ -4,7 +4,7 @@
 
 
 # Adicionar contrib e non-free para os repositorios
-\</etc/apt/sources.list\> \
+\</etc/apt/sources.list\>
 ```
 deb http://deb.debian.org/debian/ buster main non-free contrib
 deb-src http://deb.debian.org/debian/ buster main non-free contrib
