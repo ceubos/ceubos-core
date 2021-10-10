@@ -48,4 +48,3 @@ Ao adicionar: `--no-build` no commit para evitar que o commit passe pela build d
 [live-build docs](https://live-team.pages.debian.net/live-manual/html/live-manual/about-manual.en.html)
 [live-build manual](https://manpages.debian.org/testing/live-build/live-build.7.en.html)
 [live-build team salsa](https://salsa.debian.org/live-team)
-test
