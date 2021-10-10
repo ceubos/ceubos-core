@@ -28,7 +28,7 @@ Apos isso, atualizar os seus repostorios e a maquina
 `git clone https://github.com/ceubos/ceubos-core.git`
 2. Va para o diretorio que possui as instrucoes do live build \
 `cd ./ceubos-core/live`
-3. Dentro do repositorio, ha um script chamado **live.sh** executeu e depois mande o live-build construir a iso
+3. Dentro do repositorio, ha um script chamado **live.sh** execute e depois mande o live-build construir a iso
 ```
 ./live.sh
 sudo lb build
